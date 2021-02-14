@@ -1,0 +1,36 @@
+-
+    const working = [
+        {
+            title: '<span class="h-color-red">1</span> этап',
+            content: 'Выбираем для Вас удобную дату и согласовываем <br> предварительный список работ',
+            aos: 'fade-down-right',
+        },
+        {
+            title: '<span class="h-color-red">2</span> этап',
+            content: 'Вы привозите автомобиль, мы даем Вам вкусный кофе <br> и производим обслуживание авто',
+            aos: 'fade-up-right',
+        },
+        {
+            title: '<span class="h-color-red">3</span> этап',
+            content: 'Вы можете дождаться Ваш автомобиль или уехать <br> по своим делам',
+            aos: 'fade-down-left',
+        },
+        {
+            title: '<span class="h-color-red">4</span> этап',
+            content: 'Забрать автомобиль можете в удобное для Вас время, <br> согласовав способ оплаты',
+            aos: 'fade-up-left',
+        },
+    ]
+section.working
+    .container
+        .section-title
+            |Как
+            |
+            span.h-color-red мы
+            |
+            |работаем
+        .working-grid
+            each work in working
+                .working-grid__item(data-aos= work.aos)
+                    .working__title!= work.title
+                    .working__content!= work.content

@@ -1,0 +1,56 @@
+// Buttons
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-self: center;
+    color: $white;
+    font-family: $bold;
+    padding: 1.2rem 2.6rem;
+    border-radius: rem(60px);
+    background: $btn-and-thead-gradient;
+    box-shadow: 0 6px 14px rgba(245, 24, 51, 0.32);
+    border: 2px solid transparent;
+    max-width: 250px;
+    min-width: 190px;
+    text-align: center;
+
+    &:active {
+        transform: translateY(1px);
+    }
+
+    &:hover {
+        filter: brightness(1.1);
+    }
+
+    &--inverse {
+        border: 2px solid $red;
+        color: $red;
+        background: $white;
+        box-shadow: none;
+
+        &:hover {
+            color: $white;
+            background: $btn-and-thead-gradient;
+        }
+    }
+
+    &--round {
+        padding: 0.5rem;
+        border-radius: 50%;
+        width: initial;
+        height: initial;
+        min-width: initial;
+    }
+
+    &--disabled {
+        filter: grayscale(1);
+        opacity: 0.2;
+        pointer-events: none;
+    }
+
+    &--large {
+        padding: 1.2rem 2rem;
+        min-width: rem(250px);
+    }
+}

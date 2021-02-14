@@ -1,0 +1,70 @@
+-
+    const footerNav = [
+        {
+            title: 'О нас',
+            link: './about-us.html'
+        },
+        {
+            title: 'Марки автомобилей',
+            link: './brands.html'
+        },
+        {
+            title: 'Работы',
+            link: './works.html'
+        },
+        {
+            title: 'Блог',
+            link: './blog.html'
+        },
+        {
+            title: 'Подбор запчастей',
+            link: './parts.html'
+        },
+        {
+            title: 'Акции',
+            link: './shares.html'
+        },
+        {
+            title: 'Контакты',
+            link: './contacts.html'
+        },
+        {
+            title: 'Отзывы',
+            link: './reviews.html'
+        },
+    ]
+footer.footer
+    .footer__wrapp
+        .logo.footer__logo
+            a(href="/").logo__link
+                img(src="./static/images/general/logo.png").logo__img
+        .footer__nav
+            ul.footer__nav-list
+                each obj in footerNav
+                    li.footer__nav-item
+                        a(href= obj.link).footer__nav-link= obj.title
+        .footer__contacts.contacts
+            ul.footer__contacts-list
+                li.footer__contacts-item.contacts__item
+                    +icon('phone')
+                    a.contacts__link.footer__contacts-link.footer__contacts-link--highlighted(href="tel:+74994441473") +7 (499) 444-14-73
+                li.footer__contacts-item.contacts__item
+                    +icon('envelop')
+                    a.contacts__link.footer__contacts-link(href="mailto:autoservice@gmail.com") autoservice@gmail.com
+                li.footer__contacts-item.contacts__item
+                    +icon('marker')
+                    span Москва, Рубцовская набережная 11
+                li.footer__contacts-item.contacts__item
+                    +icon('marker')
+                    span Москва, Загородное шоссе д.1, к. 2
+        ul.footer__socials.socials
+            +socialLink('vk', '#')
+            +socialLink('tg', '#')
+            +socialLink('inst', '#')
+            +socialLink('whatsapp', '#')
+            +socialLink('youtube', '#')
+            +socialLink('viber', '#')
+        .footer__workhours Работаем ежедневно с 9-00 до 20-00
+
+
+

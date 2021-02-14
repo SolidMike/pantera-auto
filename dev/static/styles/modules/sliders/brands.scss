@@ -1,0 +1,46 @@
+//Brands section
+.brands-home {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../images/general/brands-home-bg.png");
+}
+
+//Brands slider
+.brands-slider {
+    height: rem(170px);
+
+    &__slide {
+        @include flex-center;
+        background-color: $white;
+    }
+
+    &__link {
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    &__image {
+        max-height: rem(80px);
+    }
+
+    &__btn-prev {
+        @include screen(1300px) {
+            left: 0;
+        }
+        left: -4vw;
+    }
+
+    &__btn-next {
+        @include screen(1300px) {
+            right: 0;
+        }
+        right: -4vw;
+    }
+}

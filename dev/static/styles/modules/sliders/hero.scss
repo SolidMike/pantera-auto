@@ -1,0 +1,40 @@
+//Hero Slider
+.hero-slider {
+    height: 80vmin;
+
+    @include screen(560px) {
+        height: auto;
+    }
+
+    @media (max-height: 500px) {
+        height: auto;
+    }
+
+    &__slide {
+        @include cover-background;
+    }
+
+    &__inner {
+        @extend .container;
+
+        padding-top: 5vmax;
+        padding-bottom: 5vmax;
+    }
+
+    &__title {
+        @include fluid-type($min-vw, $max-vw, 20px, 50px);
+        color: $white;
+        font-family: $bold;
+        line-height: 1.2;
+    }
+
+    &__content {
+        color: $white;
+        margin-top: calc(1rem + 1vw);
+        @include fluid-type($min-vw, $max-vw, 14px, 18px);
+    }
+
+    &__btn {
+        margin-top: calc(1rem + 1.5vw);
+    }
+}

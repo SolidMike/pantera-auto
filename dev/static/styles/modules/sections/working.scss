@@ -1,0 +1,13 @@
+.working {
+
+    background-image: url("../images/general/working-bg.jpg");
+
+    &__title {
+        @include fluid-type($min-vw, $max-vw, $min-font-size, 30px);
+        font-family: $bold;
+    }
+
+    &__content {
+        margin-top: 0.5rem;
+    }
+}

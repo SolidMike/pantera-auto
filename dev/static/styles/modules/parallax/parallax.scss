@@ -1,0 +1,34 @@
+#scene,
+#scene2 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    @include screen(768px) {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.scene {
+    &__particle-1 {
+        left: 45%!important;
+    }
+
+    &__particle-2 {
+        left: 50%!important;
+        top: 10%!important;
+    }
+}
+
+.scene2 {
+    &__particle-1 {
+        right: -75px;
+        bottom: 0;
+        left: auto !important;
+        top: auto !important;
+        position: absolute!important;
+    }
+}

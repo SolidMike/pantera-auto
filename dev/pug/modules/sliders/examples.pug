@@ -1,0 +1,28 @@
+section.examples
+    .container
+        .section-title.h-color-white
+            span.h-color-red Примеры
+            |
+            | наших работ
+        .h-pos-rel
+            .swiper-container.examples__slider.js-examples-slider
+                .swiper-wrapper
+                    .swiper-slide.examples__slide
+                        a(href="./static/images/content/examples/examples-1.jpg" data-fancybox="gallery01").examples__link.fancybox
+                            .examples__subtitle Nissan Juke - ремонт крыла
+                            img(src="./static/images/content/examples/examples-1.jpg").examples__image
+                            .examples__btn-more Смотерть фото...
+                        a(href="./static/images/content/examples/examples-2.jpg" data-fancybox="gallery01" hidden).fancybox
+                        a(href="./static/images/content/examples/examples-3.jpg" data-fancybox="gallery01" hidden).fancybox
+                    .swiper-slide.examples__slide
+                        a(href="./static/images/content/examples/examples-2.jpg" data-fancybox="gallery02").examples__link.fancybox
+                            .examples__subtitle Nissan Juke - ремонт крыла
+                            img(src="./static/images/content/examples/examples-2.jpg").examples__image
+                            .examples__btn-more Смотреть фото...
+                        a(href="./static/images/content/examples/examples-4.jpg" data-fancybox="gallery02" hidden).fancybox
+                        a(href="./static/images/content/examples/examples-5.jpg" data-fancybox="gallery02" hidden).fancybox
+                    .swiper-slide.examples__slide
+            .swiper-button-prev.examples__btn-prev.js-examples-slider-btn-prev.btn.btn--round
+                +icon('arrow-prev')
+            .swiper-button-next.examples__btn-next.js-examples-slider-btn-next.btn.btn--round
+                +icon('arrow-next')

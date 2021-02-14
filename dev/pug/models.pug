@@ -1,0 +1,74 @@
+extends template/main
+
+block variables
+    - var title = 'Модели'
+    - var pageClass = 'models-page'
+
+block content
+    -
+        const models = [
+            {
+                title: 'Lexus LX',
+                img: './static/images/content/models/lexus/lexus-lx.png',
+                link: './model.html',
+                aosDelay: '50'
+            },
+            {
+                title: 'Lexus RX',
+                img: './static/images/content/models/lexus/lexus-rx.png',
+                link: './model.html',
+                aosDelay: '100'
+            },
+            {
+                title: 'Lexus LX',
+                img: './static/images/content/models/lexus/lexus-lx.png',
+                link: './model.html',
+                aosDelay: '150'
+            },
+            {
+                title: 'Lexus RX',
+                img: './static/images/content/models/lexus/lexus-rx.png',
+                link: './model.html',
+                aosDelay: '200'
+            },
+            {
+                title: 'Lexus LX',
+                img: './static/images/content/models/lexus/lexus-lx.png',
+                link: './model.html',
+                aosDelay: '250'
+            },
+            {
+                title: 'Lexus RX',
+                img: './static/images/content/models/lexus/lexus-rx.png',
+                link: './model.html',
+                aosDelay: '300'
+            },
+            {
+                title: 'Lexus LX',
+                img: './static/images/content/models/lexus/lexus-lx.png',
+                link: './model.html',
+                aosDelay: '350'
+            },
+            {
+                title: 'Lexus RX',
+                img: './static/images/content/models/lexus/lexus-rx.png',
+                link: './model.html',
+                aosDelay: '400'
+            },
+        ]
+    section.models
+        ul.breadcrumbs(itemscope="" itemtype="http://schema.org/BreadcrumbList")
+            +breadcrumbs-item('Главная','/')
+            +breadcrumbs-item('Марки автомобилей','./brands.html')
+            +breadcrumbs-item('Модели')
+        .container
+            .section-title.h-align-center
+                | Выберите модель
+                br
+                span.h-weight-regular автомобиля
+            .grid
+                each model in models
+                    .models__card
+                        .models__title= model.title
+                        img(src= model.img loading="lazy").models__img
+                        +btn({label: 'Подробнее', href: model.link})(class="models__btn")

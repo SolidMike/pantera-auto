@@ -1,0 +1,309 @@
+extends template/main
+
+block variables
+    - var title = 'Брэнды'
+    - var pageClass = 'brands-page'
+
+block content
+    -
+        const brands = [
+            {
+                title: 'Nissan',
+                logo: './static/images/content/brands/nissan.png',
+                link: './models.html',
+                aosDelay: '0',
+                models: [{
+                        model: 'Nissan Micra',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Nissan Note',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Nissan Qashqai J10/J11',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Nissan Murano Z51/Z52',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Nissan Pathfinder R51/R52',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Nissan Patrol Y61/Y62',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Nissan Teana',
+                        link: './model.html'
+                    },
+                ]
+            },
+            {
+                title: 'Infiniti',
+                logo: './static/images/content/brands/infinity.png',
+                link: './models.html',
+                aosDelay: '500',
+                models: [
+                    {
+                        model: 'Infiniti EX25/EX35',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Infiniti FX35/FX37/FX45/FX50/FX30d',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Infiniti G25/G35',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Infiniti M35/M37/M56',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Infiniti Q30/Q50/Q60/Q70',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Infiniti QX30/QX50/QX56/QX60/QX70/QX80',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Infiniti JX35',
+                        link: './model.html'
+                    },
+                ]
+            },
+            {
+                title: 'Toyota',
+                logo: './static/images/content/brands/toyota.png',
+                link: './models.html',
+                aosDelay: '1000',
+                models: [
+                    {
+                        model: 'Toyota Auris/Yaris',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Toyota Avensis',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Toyota Camry',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Toyota Corolla',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Toyota Highlander',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Toyota Hilux',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Toyota Land Cruiser 100/200',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Toyota Land Cruisser Prado',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Toyota RAV-4',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Toyota Tundra',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Toyota Fortuner',
+                        link: './model.html'
+                    },
+                ]
+            },
+            {
+                title: 'Lexus',
+                logo: './static/images/content/brands/lexus.png',
+                link: './models.html',
+                aosDelay: '1500',
+                models: [
+                    {
+                        model: 'Lexus LX',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Lexus RX',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Lexus NX',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Lexus ES',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Lexus GS',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Lexus IS',
+                        link: './model.html'
+                    },
+                ]
+            },
+            {
+                title: 'Mazda',
+                logo: './static/images/content/brands/mazda.png',
+                link: './models.html',
+                aosDelay: '2000',
+                models: [
+                    {
+                        model: 'Mazda 3',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Mazda 6',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Mazda CX-5',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Mazda CX-7',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Mazda CX-9',
+                        link: './model.html'
+                    },
+                ]
+            },
+            {
+                title: 'Mitsubishi',
+                logo: './static/images/content/brands/mitsubishi.png',
+                link: './models.html',
+                aosDelay: '2500',
+                models: [
+                    {
+                        model: 'Mitsubishi ASX/ASX New',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Mitsubishi L200/New L200',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Mitsubishi Lancer',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Mitsubishi Pajero',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Mitsubishi Pajero Sport',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Mitsubishi Outlander',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Mitsubishi Outlander GT',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Mitsubishi Eclipse Cross',
+                        link: './model.html'
+                    },
+                ]
+            },
+            {
+                title: 'Honda',
+                logo: './static/images/content/brands/honda.png',
+                link: './models.html',
+                aosDelay: '3000',
+                models: [
+                    {
+                        model: 'Honda CR-V',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Honda Accord',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Honda Pilot',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Honda Civic',
+                        link: './model.html'
+                    },
+                ]
+            },
+            {
+                title: 'Suzuki',
+                logo: './static/images/content/brands/suzuki.png',
+                link: './models.html',
+                aosDelay: '3500',
+                models: [
+                    {
+                        model: 'Suzuki Grand Vitara',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Suzuki Jimny',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Suzuki Liana',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Suzuki Swift',
+                        link: './model.html'
+                    },
+                    {
+                        model: 'Suzuki SX-4',
+                        link: './model.html'
+                    },
+                ]
+            },
+        ]
+    section.brands
+        ul.breadcrumbs(itemscope="" itemtype="http://schema.org/BreadcrumbList")
+            +breadcrumbs-item('Главная','/')
+            +breadcrumbs-item('Марки автомобилей')
+        .container
+            .section-title.h-align-center
+                span.h-weight-regular Марки автомобилей
+                br
+                | с которыми мы работаем
+            .grid
+                each brand in brands
+                    .brands__card(data-aos="flip-left" data-aos-delay= brand.aosDelay)
+                        a(href= brand.link).brands__link
+                            img(src= brand.logo loading="lazy").brands__logo
+                        a(href= brand.link).brands__link
+                            .brands__title= brand.title
+                        ul.brands__list
+                            if brand.models
+                                each model in brand.models
+                                    li.brands__model
+                                        a(href= model.link).brands__link= model.model
+
+
+

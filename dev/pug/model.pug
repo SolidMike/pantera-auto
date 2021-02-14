@@ -1,0 +1,211 @@
+extends template/main
+
+block variables
+    - var title = 'Модель'
+    - var pageClass = 'model-page'
+
+block content
+    section.model
+        ul.breadcrumbs(itemscope="" itemtype="http://schema.org/BreadcrumbList")
+            +breadcrumbs-item('Главная','/')
+            +breadcrumbs-item('Марки автомобилей','./brands.html')
+            +breadcrumbs-item('Модели', './models.html')
+            +breadcrumbs-item('Infiniti G35')
+        .container
+            .model__block
+                img(src="./static/images/content/model.png" loading="lazy").model__img
+                .model__service.h-color-red Ремонт
+                .model__title.section-title Infiniti G35
+                .model__content Infiniti G 35 – знаменитый седан от люксового бренда компании Nissan. Производство автомобиля с задним приводом было начато в 2002 году. Через 2 года модель получила полный привод, а в 2007 году было представлено второе поколение Infiniti G 35 с задним и полным привдом. Как и большинство моделей этой марки, Г 35 изначально предназначалась для американского рынка. Это явно читается в мощностных и динамических характеристиках машины, а также в ее особой вальяжности. Традиционно высокие отзывы заслуживает и качество знаменитого бренда.
+    include ./pages/index/service
+    section
+        .container
+            .section-title Услуги нашего автосервиса
+            .cms-content
+                -
+                    const block_mod = 'accordion--full-width'
+                    const itemList = [
+                                {
+                                    title: 'Диагностика',
+                                    content: '<div class="cms-content__table"><table>\n' +
+                                            '<tbody>\n' +
+                                            '<tr>\n' +
+                                            '<td>Аккумулятора</td>\n' +
+                                            '<td>&nbsp;</td>\n' +
+                                            '<td>300</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>ДВС</td>\n' +
+                                            '<td>&nbsp;</td>\n' +
+                                            '<td>500</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Диагностика свечей накаливания со съемом&nbsp;</td>\n' +
+                                            '<td>&nbsp;</td>\n' +
+                                            '<td>2600</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Диагностика масла трансмиссии</td>\n' +
+                                            '<td>&nbsp;</td>\n' +
+                                            '<td>1000</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Диагностические работы</td>\n' +
+                                            '<td>&nbsp;</td>\n' +
+                                            '<td>1200</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Комплексная диагностика&nbsp;</td>\n' +
+                                            '<td>&nbsp;</td>\n' +
+                                            '<td>3000</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Компьютерная диагностика</td>\n' +
+                                            '<td>&nbsp;</td>\n' +
+                                            '<td>1200</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Компьютерное обучение датчика&nbsp;</td>\n' +
+                                            '<td>&nbsp;</td>\n' +
+                                            '<td>1000</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Опресовка системы охлаждения 1500</td>\n' +
+                                            '<td>&nbsp;</td>\n' +
+                                            '<td>1500</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Под капотом</td>\n' +
+                                            '<td>&nbsp;</td>\n' +
+                                            '<td>600</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Подвеска автомобиля</td>\n' +
+                                            '<td>&nbsp;</td>\n' +
+                                            '<td>600</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Толщина ЛКП</td>\n' +
+                                            '<td>&nbsp;</td>\n' +
+                                            '<td>1000</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Узла автомобиля, от&nbsp;</td>\n' +
+                                            '<td>&nbsp;</td>\n' +
+                                            '<td>1000</td>\n' +
+                                            '</tr>\n' +
+                                            '</tbody>\n' +
+                                            '</table></div>',
+                                    icon: {
+                                        name: 'arrow-down',
+                                        mod: '',
+                                    },
+                                    expanded: true,
+                                },
+                                {
+                                    title: 'Задняя подвеска',
+                                    content: '<div class="cms-content__table"><table>\n' +
+                                            '<tbody>\n' +
+                                            '<tr>\n' +
+                                            '<td>Замена амортизатора заднего</td>\n' +
+                                            '<td>1</td>\n' +
+                                            '<td>1500</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Замена втулок стабилизатора</td>\n' +
+                                            '<td>2</td>\n' +
+                                            '<td>1000</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Замена стоек стабилизатора</td>\n' +
+                                            '<td>2</td>\n' +
+                                            '<td>1300</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Замена задней цапфы</td>\n' +
+                                            '<td>1</td>\n' +
+                                            '<td>3000</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Замена задней ступицы&nbsp;</td>\n' +
+                                            '<td>1</td>\n' +
+                                            '<td>2100</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Замена подшипника задней ступицы</td>\n' +
+                                            '<td>1</td>\n' +
+                                            '<td>2900</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Замена продольной реактивной тяги</td>\n' +
+                                            '<td>1</td>\n' +
+                                            '<td>1000</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Замена шаровой опоры верхнего рычага без снятия рычага</td>\n' +
+                                            '<td>1</td>\n' +
+                                            '<td>2100</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Замена шаровой опоры нижнего рычага без снятия рычага</td>\n' +
+                                            '<td>1</td>\n' +
+                                            '<td>2100</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Замена шаровой опоры на снятом рычаге</td>\n' +
+                                            '<td>1</td>\n' +
+                                            '<td>1000</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Перепресовка сайлентблока рычага</td>\n' +
+                                            '<td>1</td>\n' +
+                                            '<td>1100</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Перепресовка втулки амортизатора</td>\n' +
+                                            '<td>1</td>\n' +
+                                            '<td>600</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Снятие/установка задней балки</td>\n' +
+                                            '<td>1</td>\n' +
+                                            '<td>3000</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Снятие/установка верхнего рычага&nbsp;</td>\n' +
+                                            '<td>1</td>\n' +
+                                            '<td>2200</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Снятие установканижнего рычага</td>\n' +
+                                            '<td>1</td>\n' +
+                                            '<td>2200</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Снятие/установка пружины&nbsp;</td>\n' +
+                                            '<td>1</td>\n' +
+                                            '<td>1000</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Снятие/установка подрамника</td>\n' +
+                                            '<td>1</td>\n' +
+                                            '<td>11000</td>\n' +
+                                            '</tr>\n' +
+                                            '<tr>\n' +
+                                            '<td>Снятие/установка подпружинного рычага&nbsp;</td>\n' +
+                                            '<td>1</td>\n' +
+                                            '<td>1200</td>\n' +
+                                            '</tr>\n' +
+                                            '</tbody>\n' +
+                                            '</table></div>',
+                                    icon: {
+                                        name: 'arrow-down',
+                                        mod: '',
+                                    },
+                                    expanded: false,
+                                }
+                            ]
+                +accordion(itemList)
+                br
+                p.h-align-center Не является офертой
+            include ./modules/forms/parts-form

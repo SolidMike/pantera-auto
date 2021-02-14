@@ -1,0 +1,13 @@
+.svg-sprite-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+}
+
+.icon-arrow-prev,
+.icon-arrow-next {
+    stroke: $white;
+    stroke-width: 2;
+    fill: none;
+}

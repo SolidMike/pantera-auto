@@ -1,0 +1,36 @@
+.brands {
+    @include cover-background;
+    background-image: url("../images/general/brands-bg.png");
+
+    &__card {
+        background-color: $white;
+        padding: calc(1rem + 1vw);
+        filter: drop-shadow(0px 16px 52px rgba(0, 0, 0, 0.06));
+    }
+
+    &__logo {
+        height: 60px;
+    }
+
+    &__list {
+        margin-top: 0.5rem;
+    }
+
+    &__title {
+        font-family: $bold;
+        color: $darkgray;
+        margin-top: calc(1.2rem + 1vw);
+    }
+
+    &__link {
+        padding: 0.15rem 0;
+        color: inherit;
+        font-size: rem(12px);
+        display: block;
+
+        &:hover {
+            color: $red;
+            font-family: $bold;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+extends template/main
+
+block variables
+    - var title = 'О нас'
+    - var pageClass = 'about-us-page'
+
+block content
+    section.about-us
+        ul.breadcrumbs.breadcrumbs--theme--dark(itemscope="" itemtype="http://schema.org/BreadcrumbList")
+            +breadcrumbs-item('Главная','/')
+            +breadcrumbs-item('О нас')
+        .about-us__left
+        .about-us__right
+        .bg-title О нас
+        .container.about-us__container
+            .section-title.h-color-white.about-us__title О нас
+            .cms-content.h-color-white.about-us__content Техцентр Пантера-Авто производит ремонт и техническое обслуживание японских автомобилей. Мы детально изучили специфику и особенности каждой модели и готовы предложить выверенное техническое обслуживание Вашего автомобиля, оригинальные масла и расходники и неоригинальные, но качественные заменители. Попробуйте наш Сервис, и мы уверены в том, что Вы останетесь нашим постоянным гостем.
+    section.form-section
+        .container.split-screen
+            .split-screen__left
+                include ./modules/forms/request-form
+            .split-screen__right
+                img(src="./static/images/general/panthera-big.png" loading="lazy").about-us__panthera
+    include ./modules/sections/seo

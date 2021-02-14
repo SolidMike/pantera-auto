@@ -1,0 +1,15 @@
+extends template/main
+
+block variables
+    - var title = 'Главная страница'
+    - var pageClass = 'home-page'
+
+block content
+    include ./pages/index/hero
+    include ./modules/sliders/brands
+    include ./pages/index/service
+    include ./pages/index/working
+    include ./modules/sections/advantages
+    include ./pages/index/reviews
+    include ./modules/sections/seo
+    include ./modules/sections/contact-us

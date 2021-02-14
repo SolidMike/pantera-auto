@@ -1,0 +1,64 @@
+//Service section
+.service {
+    @include cover-background;
+    background-image: url("../images/general/service-bg.jpg");
+}
+
+//Service-slider
+.service-slider {
+
+    &__btns-wrapp {
+        @include flex-center;
+        text-align: center;
+        margin-top: calc(2rem + 1.5vw);
+    }
+
+    &__btn-prev,
+    &__btn-next {
+        position: initial;
+        margin: initial;
+    }
+
+    &__pagination {
+        position: initial;
+        width: initial;
+        font-size: rem(24px);
+        margin: 0 1.5rem;
+        color: $white;
+    }
+
+    &__slide {
+        display: flex;
+        flex-direction: column;
+        padding: calc(1rem + 1.2vw);
+        text-align: center;
+        background-color: $white;
+    }
+
+    &__title {
+        font-family: $bold;
+        position: relative;
+        padding-bottom: 1rem;
+        flex: auto;
+        min-height: rem(80px);
+
+        &::after {
+            @include pseudo(90px, 2px);
+            background-color: $red;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-right: -50%;
+        }
+    }
+
+    &__price {
+        font-size: 24px;
+        margin-top: calc(1rem + 0.7vw);
+    }
+
+    &__btn {
+        padding: 0.8rem 2.6rem;
+        margin-top: calc(1.5rem + 2vw);
+    }
+}

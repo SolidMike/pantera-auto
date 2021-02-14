@@ -1,0 +1,19 @@
+//Split screen layout
+.split-screen {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: calc(1.6rem + 1.8vw);
+    align-items: end;
+
+    @include screen(700px) {
+        grid-template-columns: 1fr;
+    }
+
+    &__left {
+        z-index: 10;
+    }
+
+    &__right {
+        position: relative;
+    }
+}

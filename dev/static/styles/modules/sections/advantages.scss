@@ -1,0 +1,39 @@
+.advantages {
+    @include cover-background;
+    background-image: url("../images/general/advantages-bg.jpg");
+
+    &__icon {
+        font-size: 4rem;
+        color: $red;
+    }
+
+    &__title {
+        @include fluid-type($min-vw, $max-vw, 18px, 22px);
+        font-family: $bold;
+        margin-top: 0.9em;
+        line-height: 1.4;
+        color: $white;
+        min-height: rem(60px);
+
+        @include screen(520px) {
+            min-height: initial;
+        }
+    }
+
+    &__content {
+        @include fluid-type($min-vw, $max-vw, 14px, 16px);
+        color: $white;
+        margin-top: 1.5em;
+    }
+
+    &__panthera {
+        @include absolute(top -70px left 15vw bottom auto right auto);
+        @include screen(1500px) {
+            left: 0;
+        }
+        @include screen(950px) {
+            width: 200px;
+            top: -50px;
+        }
+    }
+}

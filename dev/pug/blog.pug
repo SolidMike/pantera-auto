@@ -1,0 +1,37 @@
+extends template/main
+
+block variables
+    - var title = 'Блог'
+    - var pageClass = 'blog-page'
+
+block content
+    -
+        const article = {
+                title: 'Название статьи',
+                img: './static/images/content/blog-thumb.jpg',
+                link: './article.html',
+                intro: 'Как бы сильно не развивалось общество, в мире всегда будет существовать огромное количество суеверий и примет. И люди будут продолжать в них верить, несмотря на явные противоречия...',
+                date: '06.09.2020'
+            }
+    section.blog
+        ul.breadcrumbs(itemscope="" itemtype="http://schema.org/BreadcrumbList")
+            +breadcrumbs-item('Главная','/')
+            +breadcrumbs-item('Блог')
+        .container
+            .section-title.h-align-center Блог
+            .section-list
+                - let sum = 0
+                - for (let i = 0; i < 6; i++) {
+                - let delay = 50
+                    .article-card(data-aos="fade-up" data-aos-delay= sum)
+                        a.article-card__link(href= article.link)
+                            img(src= article.img loading="lazy").article-card__img
+                        .article-card__inner
+                            a.article-card__link(href= article.link)
+                                .article-card__title= article.title
+                            .article-card__intro.cms-content= article.intro
+                            a(href= article.link).article-card__read-more Читать статью...
+                            .article-card__date Дата размещения: #{article.date}
+                - sum += delay
+                - }
+            include ./modules/pagination/pagination

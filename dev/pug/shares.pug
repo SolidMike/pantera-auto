@@ -1,0 +1,37 @@
+extends template/main
+
+block variables
+    - var title = 'Акции'
+    - var pageClass = 'shares-page'
+
+block content
+    -
+        const article = {
+            title: 'Скидки 20% на...',
+            img: './static/images/content/shares-thumb.jpg',
+            link: './share.html',
+            intro: 'Как бы сильно не развивалось общество, в мире всегда будет существовать огромное количество суеверий и примет. И люди будут продолжать в них верить, несмотря на явные противоречия...',
+            date: '06.09.2020'
+        }
+    section.shares
+        ul.breadcrumbs(itemscope="" itemtype="http://schema.org/BreadcrumbList")
+            +breadcrumbs-item('Главная','/')
+            +breadcrumbs-item('Акции')
+        .container
+            .section-title.h-align-center Сезонные акции
+            .section-list
+                - let sum = 0
+                - for (let i = 0; i < 6; i++) {
+                - let delay = 50
+                    .article-card(data-aos="fade-up" data-aos-delay= sum)
+                        a.article-card__link(href= article.link)
+                            img(src= article.img loading="lazy").article-card__img
+                        .article-card__inner
+                            a.article-card__link(href= article.link)
+                                .article-card__title= article.title
+                            .article-card__intro.cms-content= article.intro
+                            a(href= article.link).article-card__read-more Подробнее...
+                            .article-card__date.article-card__date--type--shares #{article.date}
+                - sum += delay
+                - }
+            include ./modules/pagination/pagination

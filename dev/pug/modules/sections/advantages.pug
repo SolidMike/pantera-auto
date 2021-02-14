@@ -1,0 +1,59 @@
+-
+    const advantages = [
+        {
+            icon: 'cert',
+            title: 'Сертифицированные специалисты',
+            content: 'У нас работают аттестованные механики с опытом от 3-х лет и профильным образованием.',
+            aosDelay: '0'
+        },
+        {
+            icon: 'partnership',
+            title: 'Мы работаем',
+            content: 'С физическими и юридическими лицами.',
+            aosDelay: '50'
+        },
+        {
+            icon: 'warranty',
+            title: 'Гарантия на все виды работ и запчасти',
+            content: 'Бесплатно выполним диагностику и замену запчастей в течение гарантийного срока.',
+            aosDelay: '100'
+        },
+        {
+            icon: 'payment',
+            title: 'Удобно оплачивать',
+            content: 'В нашем автосервисе можно оплачивать все услуги наличными, банковской картой, безналом.',
+            aosDelay: '150'
+        },
+        {
+            icon: 'equipment',
+            title: 'Профессиональное оборудование',
+            content: 'В нашем распоряжении современные диагностические стенды и сканеры, позволяющие точно провести диагностику и установить причину сбоя/поломки.',
+            aosDelay: '200'
+        },
+        {
+            icon: 'car-parts',
+            title: 'Качественные запчасти',
+            content: 'Запчасти и расходные материалы, только от производителей или качественные и проверенные аналоги.',
+            aosDelay: '250'
+        },
+        {
+            icon: 'deal',
+            title: 'Диагностика и ремонт под ключ',
+            content: 'Проводим диагностику и ремонт. Сами подбираем необходимые запчасти для ТО по оптимальным ценам, избавляя вас от лишней головной боли.',
+            aosDelay: '300'
+        },
+    ]
+section.advantages
+    img(src="./static/images/general/adv-panthera.png" loading="lazy" alt="panthera").advantages__panthera
+    .container
+        .section-title.h-align-center.h-color-white
+            span.h-color-red Наши
+            br
+            |преимущества
+        .advantages-grid
+            each advantage in advantages
+                .advantages-grid__item(data-aos="zoom-out" data-aos-delay= advantage.aosDelay)
+                    .advantages__icon
+                        +icon(advantage.icon)
+                    .advantages__title= advantage.title
+                    .advantages__content= advantage.content

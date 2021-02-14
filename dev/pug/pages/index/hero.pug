@@ -1,0 +1,28 @@
+-
+    const heroSlides = [
+        {
+            title: 'Мы знаем все <br> про ваш автомобиль',
+            content: 'Ремонт и обслуживание японских автомобилей',
+            image: './static/images/content/hero-slide-1.jpg'
+        }
+    ]
+section.hero
+    .swiper-container.hero-slider.js-hero-slider-init
+        .swiper-wrapper
+            each heroSlide in heroSlides
+                .swiper-slide.hero-slider__slide(style=`background-image: url("${heroSlide.image}")`)
+                    .hero-slider__inner
+                        .hero-slider__title!= heroSlide.title
+                        .hero-slider__content= heroSlide.content
+                        +btn({label: 'Оставить заявку', href: './parts.html'})(class="hero-slider__btn")
+    .hero__inner
+        #scene
+            img.scene__particle-1(src="./static/images/general/parallax-1.png" data-depth="0.4")
+            img.scene__particle-2(src="./static/images/general/parallax-2.png" data-depth="0.6")
+        #scene2
+            img.scene2__particle-1(src="./static/images/general/parallax-3.png" data-depth="0.2")
+        .hero__title
+            span.h-color-red Техцентр
+            |
+            |Пантера-авто
+        .hero__content Производит ремонт и техническое обслуживание японских автомобилей. Мы детально изучили специфику и особенности каждой модели и готовы предложить выверенное техническое обслуживание Вашего автомобиля, оригинальные масла и расходники и неоригинальные, но качественные заменители. Попробуйте наш Сервис, и мы уверены в том, что Вы останетесь нашим постоянным гостем.

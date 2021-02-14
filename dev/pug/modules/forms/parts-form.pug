@@ -1,0 +1,20 @@
+form.form.form-parts#parts-form(action="#" method="post" data-aos="zoom-in")
+    .form__header
+        .form__title !{formTitle || '<span>Остались вопросы?</span> Получите бесплатную консультацию'}
+    .form__body
+        .split-screen.h-align-items-start
+            .split-screen__left
+                +form_elem({type: 'text', id: 'brand', name: 'brand', placeholder: 'Марка автомобиля'})
+                +form_elem({type: 'text', id: 'model', name: 'model', placeholder: 'Модель'})
+                +form_elem({type: 'text', id: 'year', name: 'year', placeholder: 'Год выпуска авто'})
+                +form_elem({type: 'text', id: 'vin', name: 'vin', placeholder: 'VIN номер'})
+                +form_elem({type: 'text', id: 'name_1', name: 'name', placeholder: 'Имя'})
+                +form_elem({type: 'email', id: 'email_1', name: 'email', placeholder: 'E-mail'})
+                +form_elem({type: 'tel', id: 'phone_1', name: 'phone', placeholder: 'Телефон'})
+            .split-screen__right
+                +form_elem({type: 'textarea', id: 'message_1', name: 'message', placeholder: 'Сообщение'})
+                +btn({label: 'Отправить', type: 'submit'})(class="form-parts__btn")
+                .form__policy
+                    | Нажимая на кнопку, вы даете согласие на обработку своих персональных данных и соглашаетесь с
+                    |
+                    a(href="#") политикой конфиденциальности.

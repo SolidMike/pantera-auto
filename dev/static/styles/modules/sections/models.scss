@@ -1,0 +1,29 @@
+.models {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../images/general/blog-bg.png");
+
+    &__card {
+        @include flex-center-column;
+
+        padding: calc(1rem + 1.5vw) calc(1rem + 0.5vw);
+        background-color: $white;
+        box-shadow: 0 16px 52px rgba(0, 0, 0, 0.04);
+    }
+
+    &__title {
+        font-family: $bold;
+    }
+
+    &__img {
+        height: rem(150px);
+        object-fit: contain;
+        margin-top: 0.5rem;
+    }
+
+    &__btn {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}

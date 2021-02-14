@@ -1,0 +1,15 @@
+form.form.form-reviews#reviews-form(action="#" method="post" data-aos="zoom-in")
+    .form__header
+        .form__title !{formTitle || '<span>Остались вопросы?</span> Получите бесплатную консультацию'}
+    .form__body
+        +form_elem({type: 'text', id: 'name_1', name: 'name', placeholder: 'Имя'})
+        +form_elem({type: 'tel', id: 'phone_1', name: 'phone', placeholder: 'Телефон'})
+        +form_elem({type: 'textarea', id: 'meassage_1', name: 'meassage', placeholder: 'Содержание отзыва'})
+    .form__footer
+        +btn({label: 'Отправить', type: 'submit', })(class="form-reviews__btn")
+        .form__policy
+            |Нажимая на кнопку, вы даете согласие на обработку своих персональных
+            br
+            |данных и соглашаетесь с
+            |
+            a(href="#") политикой конфиденциальности.

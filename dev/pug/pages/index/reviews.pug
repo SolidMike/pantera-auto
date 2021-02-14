@@ -1,0 +1,31 @@
+-
+    const reviews = [
+        {
+            name: 'Дмитрий',
+            photo: './static/images/content/reviews/photo-1.png',
+            auto: 'Владелец Nissan Avenir',
+            content: 'Отличная СТО! Обслуживаю на ней свои авто много лет, качественно и вовремя. Особая благодарность Владимиру Безлепкину- подходит к каждому клиенту персонально, с уважением и профессионализмом. Больше всего нравится момент- отдал ключи и занимайся своими делами. Сделают сообщат, могут даже машину привезти( правда не всегда?). Но это важный момент в нашем динамичном мире. \n' +
+                    'Рекомендую.',
+            date: 'Дата размещения: 23.08.2020',
+        },
+        {
+            name: 'Алексей',
+            photo: './static/images/content/reviews/photo-2.png',
+            auto: 'Владелец Nissan March',
+            content: 'Отличная СТО! Обслуживаю на ней свои авто много лет, качественно и вовремя. Особая благодарность Владимиру Безлепкину- подходит к каждому клиенту персонально, с уважением и профессионализмом. Больше всего нравится момент- отдал ключи и занимайся своими делами. Сделают сообщат, могут даже машину привезти( правда не всегда?). Но это важный момент в нашем динамичном мире. \n' +
+                    'Рекомендую.',
+            date: 'Дата размещения: 06.09.2020',
+        },
+    ]
+section.reviews-home
+    .container.h-pos-rel
+        .section-title.h-align-center Отзывы клиентов
+        .swiper-container.reviews-slider.js-reviews-slider-init
+            .swiper-wrapper
+                each review in reviews
+                    .swiper-slide.reviews-card(data-aos="flip-right")
+                        +review-card(review)
+        .swiper-button-prev.reviews-slider__btn-prev.btn.btn--round.js-reviews-slider-btn-prev
+            +icon('arrow-prev')
+        .swiper-button-next.reviews-slider__btn-next.btn.btn--round.js-reviews-slider-btn-next
+            +icon('arrow-next')

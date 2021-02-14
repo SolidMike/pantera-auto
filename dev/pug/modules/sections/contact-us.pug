@@ -1,0 +1,31 @@
+section.contact-us
+    .container.split-screen
+        .split-screen__left(data-aos="slide-right")
+            include ../forms/request-form
+        .split-screen__right(data-aos="slide-left")
+            .contact-us__title
+                span.h-color-red Свяжитесь
+                |
+                |с нами
+            .contacts
+                ul.contacts__list
+                    li.contacts__item
+                        +icon('marker')
+                        span Москва, Рубцовская набережная 11
+                    li.contacts__item
+                        +icon('marker')
+                        span Москва, Загородное шоссе д.1, к. 2
+                    li.contacts__item
+                        +icon('phone')
+                        a.contacts__link(href="tel:+74994441473") +7 (499) 444-14-73
+                    li.contacts__item
+                        +icon('envelop')
+                        a.contacts__link(href="mailto:autoservice@gmail.com") autoservice@gmail.com
+                    li.contacts__item
+                        +icon('worktime')
+                        span Работаем ежедневно #[br] с 9-00 до 20-00
+                .contacts__map
+                    div(style='position:relative;overflow:hidden;')
+                        a(href='https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps' style='color:#eee;font-size:12px;position:absolute;top:0px;') Москва
+                        a(href='https://yandex.ru/maps/213/moscow/house/rubtsovskaya_naberezhnaya_11/Z04YcA5pQUcFQFtvfXt5cXRkZQ==/?ll=37.699822%2C55.780872&utm_medium=mapframe&utm_source=maps&z=17' style='color:#eee;font-size:12px;position:absolute;top:14px;') Рубцовская набережная, 11 — Яндекс.Карты
+                        iframe(src='https://yandex.ru/map-widget/v1/-/CCUIMQGnkD' width='100%' height='400' allowfullscreen='true' style='position:relative; border: 2px solid #FD2E48;' loading="lazy")

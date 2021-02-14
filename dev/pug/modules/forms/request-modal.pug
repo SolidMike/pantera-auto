@@ -1,0 +1,13 @@
+form.modal.form.form-request#request-modal(action="#" method="post" class= theme || '')
+    .form__header
+        .form__title !{formTitle || '<span>Оставьте заявку</span><br> Наши специалисты <br> скоро с вами свяжутся'}
+    .form__body
+        +form_elem({type: 'text', id: 'name', name: 'name', placeholder: 'Имя'})
+        +form_elem({type: 'tel', id: 'phone', name: 'phone', placeholder: 'Телефон'})
+        +form_elem({type: 'textarea', id: 'meassage', name: 'meassage', placeholder: 'Сообщение'})
+    .form__footer
+        +btn({label: 'Оставить заявку', type: 'submit', })
+        .form__policy
+            |Нажимая на кнопку, вы даете согласие на обработку своих персональных данных и соглашаетесь с
+            |
+            a(href="#") политикой конфиденциальности.

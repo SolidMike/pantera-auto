@@ -1,0 +1,95 @@
+extends template/main
+
+block variables
+    - var title = 'Работы'
+    - var pageClass = 'works-page'
+
+block content
+    -
+        const heroSlides = [
+            {
+                title: 'Регламентное <br> техобслуживание <br> японских автомобилей',
+                content: 'Ремонт и обслуживание японских автомобилей',
+                image: './static/images/content/hero-slide-2.jpg'
+            }
+        ]
+    section.works
+        ul.breadcrumbs.breadcrumbs--theme--dark.breadcrumbs--pos--absolute(itemscope="" itemtype="http://schema.org/BreadcrumbList")
+            +breadcrumbs-item('Главная','/')
+            +breadcrumbs-item('Работы')
+        .swiper-container.hero-slider.js-hero-slider-init
+            .swiper-wrapper
+                each heroSlide in heroSlides
+                    .swiper-slide.hero-slider__slide(style=`background-image: url("${heroSlide.image}")`)
+                        .hero-slider__inner.works__slider-inner
+                            .section-title.h-color-white!= heroSlide.title
+                            .hero-slider__content= heroSlide.content
+        .works__form-wrapp
+            - let theme = 't-white'
+            - let formTitle = '<span>Оставьте заявку!</span><br> Наши специалисты скоро с вами свяжутся'
+            include ./modules/forms/request-form
+    section
+        .container
+            .section-title Услуги нашего автосервиса
+            .cms-content
+                .cms-content__table
+                    table
+                        thead
+                            tr
+                                th Техническое обслуживание
+                                th Cтоимость (руб.)
+                        tbody
+                            tr
+                                td Замена масла ДВС
+                                td 600 руб.
+                            tr
+                                td Замена фильтра воздушного
+                                td от 150 руб.
+                            tr
+                                td Замена фильтра салона
+                                td от 400 руб.
+                            tr
+                                td Замена топливного фильтра (в баке)
+                                td от 2 400 руб.
+                            tr
+                                td Замена топливного фильтра (навесного)
+                                td от 900 руб.
+                            tr
+                                td Свечи зажигания (проверка)
+                                td от 250 руб. (за 1 свечу)
+                            tr
+                                td Свечи накала (проверка)
+                                td от 450 руб. (за 1 свечу)
+                            tr
+                                td Диагностика ходовой
+                                td Бесплатно
+                            tr
+                                td Замена масла АКПП
+                                td от 1 200 руб.
+                            tr
+                                td Замена масла в вариаторе
+                                td от 1 200 руб.
+                            tr
+                                td Замена масла в редукторе
+                                td 650 руб.
+                            tr
+                                td Замена масла в раздатке
+                                td от 1 200 руб.
+                            tr
+                                td Замена антифриза
+                                td 1 100 руб.
+                            tr
+                                td Замена тормозной жидкости
+                                td от 1 200 руб.
+                            tr
+                                td Замена масла МКПП
+                                td 800 руб.
+                    br
+                    p.h-align-center Не является офертой
+    include ./modules/sliders/brands
+    include ./modules/sections/advantages
+    - theme = ''
+    - formTitle = ''
+    include ./modules/sections/contact-us
+    include ./modules/sections/seo
+    include ./modules/sliders/examples

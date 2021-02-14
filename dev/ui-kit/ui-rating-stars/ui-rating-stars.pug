@@ -1,0 +1,25 @@
+//- review-card
+.reviews__rating.с-rating(data-star-value='')
+    input(type='radio' name='rating-5' readonly='' value='5')
+    label.с-rating__star
+    input(type='radio' name='rating-5' readonly='' value='4')
+    label.с-rating__star
+    input(type='radio' name='rating-5' readonly='' value='3')
+    label.с-rating__star
+    input(type='radio' name='rating-5' readonly='' value='2')
+    label.с-rating__star
+    input(type='radio' name='rating-5' readonly='' value='1')
+    label.с-rating__star
+//- review-form
+.form__rating.с-rating
+    input#starrating(type='number' name='starrating' max='5' min='1' value='5')
+    input#star5(type='radio' name='rating' value='5' checked='')
+    label.с-rating__star(for='star5')
+    input#star4(type='radio' name='rating' value='4')
+    label.с-rating__star(for='star4')
+    input#star3(type='radio' name='rating' value='3')
+    label.с-rating__star(for='star3')
+    input#star2(type='radio' name='rating' value='2')
+    label.с-rating__star(for='star2')
+    input#star1(type='radio' name='rating' value='1')
+    label.с-rating__star(for='star1')

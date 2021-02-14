@@ -1,0 +1,44 @@
+-
+    const services = [
+        {
+            title: 'Замена масла ДВС',
+            price: '600 руб.',
+            aosDelay: '0'
+        },
+        {
+            title: 'Замена фильтра воздушного',
+            price: 'от 150 руб.',
+            aosDelay: '50'
+        },
+        {
+            title: 'Замена топливного фильтра (навесного)',
+            price: 'от 900 руб.',
+            aosDelay: '100'
+        },
+        {
+            title: 'Замена топливного фильтра (навесного)',
+            price: 'от 250 руб.',
+            aosDelay: '150'
+        },
+        {
+            title: 'Замена масла ДВС 2',
+            price: '600 руб.',
+            aosDelay: '200'
+        },
+    ]
+section.service
+    .container
+        .section-title.h-color-white.h-align-center Техническое обслуживание автомобиля
+        .swiper-container.service-slider.js-service-slider-init
+            .swiper-wrapper
+                each service in services
+                    .swiper-slide.service-slider__slide(data-aos="fade-up" data-aos-delay= service.aosDelay)
+                        .service-slider__title #{service.title}
+                        .service-slider__price #{service.price}
+                        +btn({label: 'Записаться', href: '#request-modal'})(class='service-slider__btn modal-btn')
+    .service-slider__btns-wrapp
+        .swiper-button-prev.service-slider__btn-prev.btn.btn--round.js-service-slider-btn-prev
+            +icon('arrow-prev')
+        .swiper-pagination.service-slider__pagination.js-service-slider-pagination
+        .swiper-button-next.service-slider__btn-next.btn.btn--round.js-service-slider-btn-next
+            +icon('arrow-next')

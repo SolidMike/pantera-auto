@@ -1,0 +1,13 @@
+form.form.form-request#request-form(action="#" method="post" class= theme || '')
+    .form__header
+        .form__title !{formTitle || '<span>Остались вопросы?</span><br> Получите бесплатную консультацию'}
+    .form__body
+        +form_elem({type: 'text', id: 'name_1', name: 'name', placeholder: 'Имя'})
+        +form_elem({type: 'tel', id: 'phone_1', name: 'phone', placeholder: 'Телефон'})
+        +form_elem({type: 'textarea', id: 'meassage_1', name: 'meassage', placeholder: 'Сообщение'})
+    .form__footer
+        +btn({label: 'Оставить заявку', type: 'submit', })
+        .form__policy
+            |Нажимая на кнопку, вы даете согласие на обработку своих персональных данных и соглашаетесь с
+            |
+            a(href="#") политикой конфиденциальности.

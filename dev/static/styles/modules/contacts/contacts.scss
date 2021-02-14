@@ -1,0 +1,47 @@
+//Contacts
+.contacts {
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__link:hover {
+        color: $red;
+    }
+
+    &__item > span,
+    &__link {
+        color: $darkgray;
+        font-family: $bold;
+    }
+
+    &__address {
+        @include min-screen(1170px) {
+            grid-column: 2;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 1.5rem;
+        grid-column-gap: 0.5rem;
+
+        @include screen(920px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__map {
+        margin-top: calc(1.5rem + 1vw);
+    }
+
+    .svg-sprite-icon {
+        font-size: 1.15em;
+        margin-right: 0.6rem;
+        fill: $red;
+        flex: none;
+    }
+
+}

@@ -1,0 +1,22 @@
+extends template/main
+
+block variables
+    - var title = 'Подбор запчастей'
+    - var pageClass = 'parts-page'
+
+block content
+    section.parts
+        ul.breadcrumbs.breadcrumbs--theme--dark(itemscope="" itemtype="http://schema.org/BreadcrumbList")
+            +breadcrumbs-item('Главная','/')
+            +breadcrumbs-item('Подбор запчастей')
+        .parts__top-bg
+        .bg-title.parts__bg-title Подбор запчастей
+        .container.parts__container
+            .section-title.parts__title Подбор запчастей
+            .cms-content.h-color-white
+                p При проведении текущего ремонта или технического обслуживания вашего автомобиля, в наших техцентрах предусмотрена услуга подбора автозапчастей.
+                br
+                p Мы располагаем собственным большим складом автозапчастей и расходных материалов, а также можем привезти любую нужную деталь, со складов наших партнеров.
+            - let formTitle = '<span>Оставьте заявку</span><br> на подбор запчастей'
+            include ./modules/forms/parts-form
+            img(src="./static/images/general/adv-panthera.png").parts__panthera

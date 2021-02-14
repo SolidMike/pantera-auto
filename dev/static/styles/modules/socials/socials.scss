@@ -1,0 +1,30 @@
+.socials {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 150px;
+
+    &__item {
+        margin: 0.4rem 0.4rem 0 0.4rem;
+    }
+
+    &__link {
+        color: inherit;
+        border-radius: 50%;
+        background-color: $red;
+        padding: 0.3rem;
+        display: inline-flex;
+
+        &:hover {
+            background-color: $white;
+
+            .svg-sprite-icon {
+                fill: $red;
+            }
+        }
+    }
+
+    &__icon {
+        fill: $white;
+    }
+}

@@ -1,0 +1,72 @@
+.examples {
+    @include cover-background;
+    background-image: url("../images/general/examples-bg.jpg");
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        &:hover {
+            .examples__btn-more::before {
+                width: 100%;
+            }
+            .examples__subtitle {
+                color: $red;
+            }
+            .examples__image {
+                filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(
+                                -50deg
+                ) saturate(600%) contrast(0.8);
+            }
+        }
+    }
+
+    &__image {
+        margin-top: 1.5rem;
+        border: 10px solid #ffffff;
+        width: 100%;
+        height: rem(330px);
+        background-color: #161616;
+        object-fit: scale-down;
+        transition: filter .3s;
+    }
+
+    &__subtitle {
+        color: $white;
+        transition: color .3s;
+    }
+
+    &__btn-more {
+        position: relative;
+        color: $red;
+        display: inline-block;
+        padding-bottom: 3px;
+        margin-top: 2rem;
+
+        &::before {
+            content: '';
+            background-color: $red;
+            width: 0;
+            height: 3px;
+            position: absolute;
+            bottom: 0;
+            transition: width .3s;
+        }
+    }
+
+    &__btn-prev {
+        left: -4vw;
+        @include screen(1300px) {
+            left: 0;
+        }
+    }
+
+    &__btn-next {
+        right: -4vw;
+        @include screen(1300px) {
+            right: 0;
+        }
+    }
+}

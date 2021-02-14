@@ -1,0 +1,33 @@
+extends template/main
+
+block variables
+    - var title = 'Отзывы'
+    - var pageClass = 'reviews-page'
+
+block content
+    -
+        const review = {
+                name: 'Дмитрий',
+                photo: './static/images/content/reviews/photo-1.png',
+                auto: 'Владелец Nissan Avenir',
+                content: 'Отличная СТО! Обслуживаю на ней свои авто много лет, качественно и вовремя. Особая благодарность Владимиру Безлепкину- подходит к каждому клиенту персонально, с уважением и профессионализмом. Больше всего нравится момент- отдал ключи и занимайся своими делами. Сделают сообщат, могут даже машину привезти( правда не всегда?). Но это важный момент в нашем динамичном мире. \n' +
+                        'Рекомендую.',
+                date: 'Дата размещения: 23.08.2020',
+            }
+    section.reviews
+        ul.breadcrumbs(itemscope="" itemtype="http://schema.org/BreadcrumbList")
+            +breadcrumbs-item('Главная','/')
+            +breadcrumbs-item('Отзывы клиентов')
+        .container
+            .section-title.h-align-center Отзывы клиентов
+            .section-list
+                - let sum = 0
+                - for (let i = 0; i < 6; i++) {
+                - let delay = 250
+                    .reviews-card.reviews-card--full-width(data-aos="fade-up" data-aos-delay= sum)
+                        +review-card(review)
+                - sum += delay
+                - }
+            include ./modules/pagination/pagination
+            -  let formTitle = '<span>Оставьте отзыв</span>'
+            include ./modules/forms/reviews-form

@@ -1,0 +1,68 @@
+include ../utils/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="description" content="")
+        meta(name="keywords" content="")
+        link(rel='shortcut icon' type='image/x-icon' href='/favicon.ico')
+        link(rel='apple-touch-icon' sizes='152x152' href='/apple-touch-icon.png')
+        link(rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png')
+        link(rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png')
+        link(rel='manifest' href='/site.webmanifest')
+        link(rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5')
+        meta(name='msapplication-TileColor' content='#da532c')
+        meta(name='theme-color' content='#ffffff')
+        meta(property='og:locale' content='ru_RU')
+        meta(property='og:type' content='')
+        meta(property='og:site_name' content='')
+        meta(property='og:title' content='')
+        meta(property='og:image' content='')
+        meta(property='og:url' content='')
+        meta(property='og:description' content='')
+        link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
+    body(class=pageClass)
+        .wrapper
+            #site-overlay
+                .nav-mobile
+            include ../modules/header/header
+            .content
+                block content
+            include ../modules/footer/footer
+            include ../modules/forms/request-modal
+            .to-top-btn.js-top-btn
+        script(src="static/js/jquery-3.3.1.min.js")
+        script(src="static/js/libs.min.js")
+        script(src="static/js/main.js")
+        script(type='application/ld+json').
+            {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "url": "",
+                "name": "",
+                "email": "",
+                "image": "",
+                "description": "",
+                "telephone" : [
+                    "",
+                    ""
+                    ],
+                "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "",
+                "postalCode": "",
+                "streetAddress": ""
+                },
+                "openingHours": "",
+                "sameAs" : [
+                ""
+                ]
+            }
+        block script

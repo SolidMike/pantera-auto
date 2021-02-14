@@ -1,0 +1,56 @@
+.seo {
+    @include cover-background;
+    background-image: url("../images/general/seo-bg.jpg");
+
+    &__title {
+        color: $white;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: $red;
+            height: 2px;
+            width: 100px;
+            top: 150%;
+            left: 0;
+        }
+    }
+
+    &__content {
+
+        @include screen(600px) {
+            position: relative;
+            max-height: rem(100px);
+            overflow: hidden;
+            transition: .5s;
+
+            &::after {
+                background-image : linear-gradient(to bottom,
+                        rgba(22,22,22, 0),
+                        rgba(22,22,22, 1) 90%);
+                content: '';
+                position: absolute;
+                bottom: 0;
+                height: 50%;
+                left: 0;
+                width: 100%;
+            }
+
+            &.is-open {
+                max-height: 1000px;
+
+                &::after {
+                    content: none;
+                }
+            }
+        }
+    }
+    &__btn {
+        margin-top: 1rem;
+
+        @include min-screen(601px) {
+            display: none;
+        }
+    }
+}

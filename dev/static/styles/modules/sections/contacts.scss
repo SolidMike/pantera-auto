@@ -1,0 +1,16 @@
+.contacts-section {
+
+    &__title {
+        @include fluid-type($min-vw, $max-vw, $min-font-size, 30px);
+        font-family: $bold;
+        margin-bottom: calc(1.5rem + 1vw);
+    }
+
+    &__list {
+        grid-template-columns: 1fr;
+    }
+
+    &__map {
+        margin-top: 0;
+    }
+}

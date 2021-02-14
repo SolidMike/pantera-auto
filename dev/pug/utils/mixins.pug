@@ -1,0 +1,186 @@
+mixin icon(name,mod)
+    if(mod)
+        svg(class="svg-sprite-icon icon-" + name + ' ' + mod)
+            use(xlink:href="static/images/svg/symbol/sprite.svg#" + name)
+    else
+        svg(class="svg-sprite-icon icon-" + name)
+            use(xlink:href="static/images/svg/symbol/sprite.svg#" + name)
+
+//- Button 1.1
+//- 1.1: Added disabled state
+mixin btn(options, attributes)
+    - var DEFAULT_OPTIONS = {};
+    - DEFAULT_OPTIONS.label = 'Button label' // string
+    - DEFAULT_OPTIONS.mod = '' // string
+    - DEFAULT_OPTIONS.href = false // string
+    - DEFAULT_OPTIONS.icon = false // object
+    - DEFAULT_OPTIONS.disabled = false // boolean
+    - DEFAULT_OPTIONS.type = 'button'  // string
+    - DEFAULT_OPTIONS.iconPosition = 'left' // can be {left, right}
+
+    //- Options that shouldn't be used
+    - DEFAULT_OPTIONS.variant = false // string
+
+    - options = Object.assign({}, DEFAULT_OPTIONS, options || {});
+
+    mixin btn-content
+        if options.icon && !options.iconPosition || options.icon && options.iconPosition == "left"
+            +icon(options.icon.name, options.icon.mod)
+            span.btn__label= options.label
+        if options.icon && options.iconPosition == "right"
+            span.btn__label= options.label
+            +icon(options.icon.name, options.icon.mod)
+        if !options.icon
+            span.btn__label= options.label
+        block
+
+    if options.variant
+        | Error: please use skin to denote button variants
+
+    if options.disabled && !options.href
+        button.btn( class= options.mod ? "btn" + options.mod : "" type= options.type disabled)&attributes(attributes)
+            +btn-content
+    else
+        if options.href
+            a.btn(class= `${options.mod ? "btn" + options.mod : ""} ${options.disabled ? "btn--disabled" : ""}` href=options.href)&attributes(
+                attributes)
+                +btn-content
+        if !options.href
+            button.btn( class= options.mod ? "btn" + options.mod : "" type= options.type)&attributes(attributes)
+                +btn-content
+
+//- Review card mixin
+mixin review-card(obj)
+    .reviews-card__author
+        img(src= obj.photo loading="lazy" alt= obj.photo).reviews-card__photo
+        .reviews-card__name= obj.name
+        .reviews-card__auto= obj.auto
+    .reviews-card__content= obj.content
+    .reviews-card__date= obj.date
+
+mixin form_elem(config)
+    //- default values
+    - config.class_array = config.class_array || {}
+    - config.class_array.group_mod = config.class_array.group_mod || ''
+    - config.class_array.label_mod = config.class_array.label_mod || ''
+    - config.class_array.input_mod = config.class_array.input_mod || ''
+    - config.class_array.elem_mod = config.class_array.elem_mod || ''
+    - config.add_class = config.add_class || ''
+    - config.icon = config.icon || {}
+    - config.icon.name = config.icon.name || ''
+    - config.icon.mod = config.icon.mod || ''
+    - config.placeholder = config.placeholder || ''
+    - config.required = config.required || false
+    - config.form_id = config.form_id || ''
+    if !config.id
+        - config.id = config.title.replace(/\s/g, '_').replace(/[.,:;(){}/?!@#$%&*]/g, '')
+    else
+        - config.id = config.id.replace(/\s/g, '_').replace(/[.,:;(){}/?!@#$%&*]/g, '')
+    if config.type === 'text' || config.type === 'password' || config.type === 'email' || config.type === 'textarea' || config.type === 'tel'
+        .form-group(class=config.class_array.group_mod)
+            label.form-group__label(for=config.id class=config.label_mod) #{config.title}
+                if config.icon.name
+                    +icon(config.icon.name, `${config.icon.mod} form-group__icon`)
+                else
+            if config.type === 'text' || config.type === 'password' || config.type === 'email' || config.type === 'tel'
+                if config.value
+                    input.form-group__input(value=config.value type=config.type id=config.id name=config.name class=`${config.class_array.input_mod} ${config.add_class}` placeholder=config.placeholder required=config.required form=config.form_id)
+                    .form-group__help #{config.help}
+                    block
+                else
+                    input.form-group__input(type=config.type id=config.id name=config.name class=`${config.class_array.input_mod} ${config.add_class}` placeholder=config.placeholder required=config.required form=config.form_id)
+                    .form-group__help #{config.help}
+                    block
+            if config.type === 'textarea'
+                textarea.form-group__input(type=config.type id=config.id name=config.name class=`${config.class_array.input_mod} ${config.add_class}` placeholder=config.placeholder required=config.required form=config.form_id) #{config.value}
+                .form-group__help #{config.help}
+                block
+    if config.type === 'file'
+        .file-group(class=config.class_array.group_mod)
+            label.file-group__label(for=config.id class=config.label_mod) #{config.title}
+                if config.icon.name
+                    +icon(config.icon.name, `${config.icon.mod} file-group__icon`)
+                else
+            input.file-group__input(type=config.type id=config.id name=config.name class=`${config.class_array.input_mod} ${config.add_class}` placeholder=config.placeholder required=config.required form=config.form_id)
+            .form-group__help #{config.help}
+            span.file-group__value.js-uploaded-file-value
+            block
+    if config.type === 'select'
+        select.select-group(id=config.id multiple name=config.name class=`${config.class_array.group_mod} ${config.add_class}` data-placeholder=config.placeholder required=config.required form=config.form_id)
+            each option in config.options
+                option.select-group__option(value=option)= option
+        block
+    if config.type === 'checkbox' || config.type === 'radio'
+        label.chk-rd-group(for=config.id class=config.label_mod)
+            if config.checked
+                input.chk-rd-group__input(name=config.name type=config.type class=`${config.class_array.input_mod} ${config.add_class}` checked='checked' required=config.required form=config.form_id)
+            else
+                input.chk-rd-group__input(name=config.name type=config.type class=`${config.class_array.input_mod} ${config.add_class}` required=config.required form=config.form_id)
+            span.chk-rd-group__label(class=config.elem_mod) #{config.title}
+        block
+    if config.type === 'search'
+        label.search-group(for=config.id class=config.label_mod) #{config.title}
+        input.search-group__input(id=config.id name=config.name type=config.type class=`${config.class_array.input_mod} ${config.add_class}` required=config.required form=config.form_id)
+        button.search-group__btn(type="submit" class=config.elem_mod)
+            if config.icon.name
+                +icon(config.icon.name, `${config.icon.mod} search-group__icon`)
+            else
+                span Найти
+        block
+
+mixin socialLink(icon,link)
+    li.socials__item
+        a(href=link).socials__link
+            +icon(icon, 'socials__icon')
+
+mixin menu(data, depth)
+    - ++depth
+    ul(class= data.subnav ? 'dropdown__menu' : 'menu__list')
+        each item in data.items
+            - let dropdownToggle = ''
+            - if (depth === 2 && item.subnav) dropdownToggle = 'dropdown__toggle'
+            li(class= depth > 2 ? 'dropdown__item' : 'menu__item' class= item.subnav ? 'dropdown' : '' class= item.menuSelected ? "is-active" : "")
+                a(class= depth > 2 ? 'dropdown__link' : 'menu__link' class= dropdownToggle href = item.link)= item.title
+                if item.subnav
+                    +menu(item, depth)
+
+mixin breadcrumbs-item(text,href)
+    li.breadcrumbs__item(itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem")
+        if(href)
+            a.breadcrumbs__link(href=href itemprop="item")
+                span(itemprop="name")=text
+            meta(itemprop="position" content="")
+        else
+            span(itemprop="name").breadcrumbs__text=text
+            meta(itemprop="position" content="")
+
+//- accordion
+mixin accordion(config, block_mod)
+    //- default values
+    - block_mod = block_mod || ''
+
+    .accordion(class= block_mod)
+        each item in config
+            +accordion-item(item)
+
+//- accordion-item
+mixin accordion-item(item)
+    //- default values
+    - item.class_array = item.class_array || {}
+    - item.class_array.item_mod = item.class_array.item_mod || ''
+    - item.class_array.heading_mod = item.class_array.heading_mod || ''
+    - item.class_array.title_mod = item.class_array.title_mod || ''
+    - item.class_array.inner_mod = item.class_array.inner_mod || ''
+    - item.class_array.content_mod = item.class_array.content_mod || ''
+    - item.icon = item.icon || {}
+    - item.icon.name = item.icon.name || ''
+    - item.icon.mod = item.icon.mod || ''
+
+    .accordion__item(class= item.expanded ? 'is-active' : '' class= item.class_array.item_mod)
+        .accordion__heading.js-accordion-toggle(class= item.class_array.heading_mod)
+            if item.icon.name
+                +icon(item.icon.name, `${item.icon.mod} accordion__icon`)
+            else
+            .accordion__title(class= item.class_array.title_mod)= item.title
+        .accordion__inner(class= item.class_array.inner_mod)
+            .accordion__content(class= item.class_array.content_mod)!= item.content

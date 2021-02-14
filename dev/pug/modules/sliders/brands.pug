@@ -1,0 +1,26 @@
+-
+    const brands = [
+        {image: './static/images/content/brands/nissan.png', aosDelay: '0'},
+        {image: './static/images/content/brands/infinity.png', aosDelay: '500'},
+        {image: './static/images/content/brands/toyota.png', aosDelay: '1000'},
+        {image: './static/images/content/brands/lexus.png', aosDelay: '1500'},
+        {image: './static/images/content/brands/mazda.png', aosDelay: '2000'},
+        {image: './static/images/content/brands/mitsubishi.png', aosDelay: '2500'},
+    ]
+section.brands-home
+    .container
+        .section-title.h-align-center
+            span.h-weight-regular Марки автомобилей
+            br
+            |с которыми мы работаем
+        .h-pos-rel
+            .swiper-container.brands-slider.js-brands-slider-init
+                .swiper-wrapper
+                    each brand in brands
+                        .swiper-slide.brands-slider__slide
+                            a(href="./brands.html").brands-slider__link
+                                img.brands-slider__image(src= brand.image loading="lazy" alt= brand.image)
+            .swiper-button-prev.brands-slider__btn-prev.btn.btn--round.js-brands-slider-btn-prev
+                +icon('arrow-prev')
+            .swiper-button-next.brands-slider__btn-next.btn.btn--round.js-brands-slider-btn-next
+                +icon('arrow-next')

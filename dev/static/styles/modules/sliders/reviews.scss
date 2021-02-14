@@ -1,0 +1,78 @@
+//Reviews-section
+.reviews-home {
+    background-color: $whitesmoke;
+}
+
+//Reviews-slider
+.reviews-slider {
+
+    &__btn-prev {
+        left: rem(-50px);
+
+        @include screen(1300px) {
+            left: 0;
+        }
+    }
+
+    &__btn-next {
+        right: rem(-50px);
+
+        @include screen(1300px) {
+            right: 0;
+        }
+    }
+}
+
+//Reviews-card
+.reviews-card {
+    padding: calc(2rem + 1.5vw);
+    background-color: $white;
+    box-shadow: 0 18px 52px rgba(0, 0, 0, 0.04);
+
+    &__author {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-column-gap: 1.2rem;
+        align-items: center;
+    }
+
+    &__photo {
+        grid-row: 1 / 3;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+    }
+
+    &__name {
+        font: rem(18px) $bold;
+    }
+
+    &__auto {
+        color: $red;
+        font: rem(14px) $bold;
+    }
+
+    &__content {
+        @include fluid-type($min-vw, $max-vw, 12px, 16px);
+        margin-top: 1.2rem;
+    }
+
+    &__date {
+        color: $lightgray;
+        font-size: rem(10px);
+        margin-top: 1rem;
+    }
+
+    &--full-width {
+        width: 100%;
+
+        &:not(:first-child) {
+            margin-top: 2rem;
+        }
+
+        .reviews-card__content {
+            margin-top: 1.6rem;
+        }
+    }
+}

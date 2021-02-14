@@ -1,0 +1,43 @@
+.model {
+
+    &__block {
+
+        display: grid;
+        grid-template-areas:
+            "img service"
+            "img title"
+            "img content";
+        grid-template-columns: 0.5fr 1fr;
+
+        @include screen(560px) {
+            grid-template-areas:
+                "service"
+                "title"
+                "img"
+                "content";
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__img {
+        grid-area: img;
+        height: 220px;
+        object-fit: contain;
+        align-self: center;
+        justify-self: center;
+    }
+
+    &__service {
+        grid-area: service;
+        font-family: $bold;
+    }
+
+    &__title {
+        grid-area: title;
+        margin-bottom: 1.5em;
+    }
+
+    &__content {
+        grid-area: content;
+    }
+}
